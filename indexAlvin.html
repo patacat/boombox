@@ -3,8 +3,46 @@
     <head>
         <title>FUNK</title>
         <meta charset="UTF-8" />
-        <iframe src="1.mp3" allow="autoplay" style="display:none" id="myaudio"></iframe> 
+        <iframe src="1.mp3" allow="" style="display:none" id="myaudio"></iframe> 
+
+
+			<style>
+			#notes1 {
+					-webkit-animation: rotation 0.5s infinite linear;
+					-webkit-animation-direction: alternate;
+					position: absolute;
+					left:900px;
+					top: 300px;
+			}
+
+			@-webkit-keyframes rotation {
+					from {
+							-webkit-transform: rotate(-45deg);
+					}
+					to {
+							-webkit-transform: rotate(30deg);
+					}
+			}
+			#notes2 {
+					-webkit-animation: rotation 0.5s infinite linear;
+					-webkit-animation-direction: alternate;
+					position:absolute;
+					left:1000px;
+					top: 700px;
+			}
+			#notes3 {
+					-webkit-animation: rotation 0.5s infinite linear;
+					-webkit-animation-direction: alternate;
+					position: absolute;
+					left:100px;
+					top: 300px;
+			}
+
+			
+			</style>
     </head>
+
+
 
 <body>
 
@@ -42,8 +80,17 @@
         }
         document.getElementById("myaudio").addEventListener("ended", getRandomSounds);
         getRandomSounds();
+
+	
+
     </script>
 
-    <img src="boombox.png" onclick="getRandomSounds()" height="1000px" width="1000px">
+    <img id="boom" src="boombox.png" onclick="getRandomSounds()" height="1000px" width="1000px">
+
+	<img id="notes1" src="notes.png" height="100px" width="100px">
+	<img id="notes2" src="notes1.png" height="100px" width="100px">
+	<img id="notes3" src="notes2.png" height="100px" width="100px">
+
+
 </body>
 </html>
