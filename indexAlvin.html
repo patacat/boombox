@@ -3,7 +3,7 @@
     <head>
         <title>FUNK</title>
         <meta charset="UTF-8" />
-        <iframe src="1.mp3" allow="" style="display:none" id="myaudio"></iframe> 
+        <!-- <iframe src="1.mp3" allow="autoplay" style="display:block" id="myaudio"></iframe>  -->
 
 
 			<style>
@@ -46,6 +46,13 @@
 
 <body>
 
+	<audio
+        controls
+        autoplay
+        id = "myaudio"
+        src="1.mp3">
+    </audio>
+
     <script type="text/javascript">
         var sounds = new Array();
         sounds[0]="1.mp3";
@@ -78,8 +85,10 @@
             var randomNum = Math.floor(Math.random()*sounds.length);
             document.getElementById("myaudio").src=sounds[randomNum];
         }
-        document.getElementById("myaudio").addEventListener("ended", getRandomSounds);
-        getRandomSounds();
+        document.getElementById("myaudio").addEventListener("ended", function(){
+        	getRandomSounds();
+        });
+
 
 	
 
